@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Dijital Nöbetçi - Proje Sunumu</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    color: #2c2c2a;
+    background: #f5f5f3;
+    line-height: 1.6;
+    padding: 20px;
+  }
+  
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 50px;
+    border: 1px solid #d3d1c7;
+    border-radius: 4px;
+  }
+  
+  /* HEADER */
+  header {
+    border-bottom: 3px solid #444441;
+    padding-bottom: 25px;
+    margin-bottom: 35px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+  }
+  
+  .logo-box {
+    width: 110px;
+    height: 110px;
+    border: 2px dashed #888780;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: #f1efe8;
+    text-align: center;
+    color: #5f5e5a;
+    font-size: 11px;
+    padding: 8px;
+  }
+  
+  /* Logo eklemek için: src="logo.png" şeklinde img etiketi ekleyin */
+  .logo-box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  
+  .header-text h1 {
+    font-size: 28px;
+    color: #2c2c2a;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+  }
+  
+  .header-text .subtitle {
+    font-size: 15px;
+    color: #5f5e5a;
+    font-weight: 400;
+  }
+  
+  .header-text .category {
+    display: inline-block;
+    background: #444441;
+    color: #ffffff;
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 3px;
+    margin-top: 8px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  
+  /* INFO STRIP */
+  .info-strip {
+    background: #f1efe8;
+    border-left: 4px solid #5f5e5a;
+    padding: 18px 22px;
+    margin-bottom: 35px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px 30px;
+    font-size: 13px;
+  }
+  
+  .info-item .label {
+    color: #5f5e5a;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+  }
+  
+  .info-item .value {
+    color: #2c2c2a;
+    font-weight: 500;
+  }
+  
+  /* SECTIONS */
+  section {
+    margin-bottom: 32px;
+  }
+  
+  h2 {
+    font-size: 17px;
+    color: #2c2c2a;
+    border-bottom: 1px solid #d3d1c7;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  h2::before {
+    content: "";
+    width: 4px;
+    height: 18px;
+    background: #444441;
+    display: inline-block;
+  }
+  
+  h3 {
+    font-size: 14px;
+    color: #444441;
+    margin: 18px 0 10px;
+    font-weight: 600;
+  }
+  
+  p {
+    font-size: 14px;
+    color: #2c2c2a;
+    margin-bottom: 10px;
+  }
+  
+  /* SCHEMA BOX */
+  .schema-container {
+    background: #f1efe8;
+    border: 1px solid #d3d1c7;
+    border-radius: 4px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .schema-container svg {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .caption {
+    font-size: 12px;
+    color: #5f5e5a;
+    font-style: italic;
+    text-align: center;
+    margin-top: 8px;
+  }
+  
+  /* MATERIAL TABLE */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+    font-size: 13px;
+  }
+  
+  th {
+    background: #444441;
+    color: #ffffff;
+    padding: 10px 12px;
+    text-align: left;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.3px;
+  }
+  
+  td {
+    padding: 9px 12px;
+    border-bottom: 1px solid #d3d1c7;
+    color: #2c2c2a;
+  }
+  
+  tr:nth-child(even) td {
+    background: #f9f8f4;
+  }
+  
+  tr:last-child td {
+    border-bottom: none;
+  }
+  
+  .qty {
+    color: #5f5e5a;
+    font-weight: 500;
+    text-align: center;
+    width: 70px;
+  }
+  
+  .category-tag {
+    display: inline-block;
+    background: #d3d1c7;
+    color: #444441;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 11px;
+  }
+  
+  /* DESCRIPTION GRID */
+  .desc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 14px;
+  }
+  
+  .desc-card {
+    background: #f9f8f4;
+    border: 1px solid #d3d1c7;
+    border-radius: 4px;
+    padding: 14px 16px;
+  }
+  
+  .desc-card .num {
+    display: inline-block;
+    background: #444441;
+    color: #ffffff;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 22px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-right: 8px;
+  }
+  
+  .desc-card h4 {
+    font-size: 13px;
+    color: #2c2c2a;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .desc-card p {
+    font-size: 12px;
+    color: #5f5e5a;
+    margin: 0;
+    line-height: 1.5;
+  }
+  
+  /* WARNING BOX */
+  .warning {
+    background: #fefaf2;
+    border: 1px solid #BA7517;
+    border-left: 4px solid #BA7517;
+    padding: 14px 18px;
+    border-radius: 4px;
+    margin-top: 20px;
+    font-size: 13px;
+    color: #633806;
+  }
+  
+  .warning strong {
+    color: #412402;
+    display: block;
+    margin-bottom: 4px;
+  }
+  
+  /* FOOTER */
+  footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #d3d1c7;
+    text-align: center;
+    font-size: 11px;
+    color: #888780;
+  }
+  
+  /* PRINT */
+  @media print {
+    body { background: white; padding: 0; }
+    .page { border: none; padding: 30px; max-width: 100%; }
+    section { page-break-inside: avoid; }
+  }
+  
+  @media (max-width: 700px) {
+    .info-strip { grid-template-columns: 1fr; }
+    .desc-grid { grid-template-columns: 1fr; }
+    header { flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo-box">
+      <!-- LOGO EKLEMEK İÇİN: aşağıdaki yorumu silin ve src="logo.png" yapın -->
+      <!-- <img src="logo.png" alt="Okul Logosu"> -->
+      Okul Logosu<br>(buraya<br>ekleyin)
+    </div>
+    <div class="header-text">
+      <h1>Dijital Nöbetçi</h1>
+      <div class="subtitle">İşçi Sağlığı ve Güvenliği için Yapay Zeka Destekli İzleme Sistemi</div>
+      <span class="category">İSG · IoT · Yapay Zeka</span>
+    </div>
+  </header>
+  
+  <!-- INFO STRIP -->
+  <div class="info-strip">
+    <div class="info-item">
+      <div class="label">Okul</div>
+      <div class="value">[Okul Adınızı Buraya Yazın]</div>
+    </div>
+    <div class="info-item">
+      <div class="label">Şehir</div>
+      <div class="value">[Şehir Adı]</div>
+    </div>
+    <div class="info-item">
+      <div class="label">Öğrenci(ler)</div>
+      <div class="value">[Öğrenci İsim Soyisim]</div>
+    </div>
+    <div class="info-item">
+      <div class="label">Danışman Öğretmen</div>
+      <div class="value">[Öğretmen İsim Soyisim]</div>
+    </div>
+    <div class="info-item">
+      <div class="label">Sınıf / Bölüm</div>
+      <div class="value">[Sınıf Bilgisi]</div>
+    </div>
+    <div class="info-item">
+      <div class="label">Tarih</div>
+      <div class="value">2026</div>
+    </div>
+  </div>
+  
+  <!-- ABOUT -->
+  <section>
+    <h2>Proje Hakkında</h2>
+    <p>Dijital Nöbetçi, motorlu araç kullanan işçilerin güvenliğini sağlamak amacıyla geliştirilmiş çift katmanlı bir izleme sistemidir. Sistem iki ayrı platformdan oluşur: yapay zeka destekli görüntü işleme ile koruyucu gözlük kontrolü yapan birinci sistem ve hareket sensörü ile işçi farkındalığını izleyen ikinci sistem.</p>
+    <p>İşçi koruyucu gözlük takmazsa motor çalışmaz. Gözlük takılı olsa bile 5 saniye boyunca hareket algılanmazsa (bayılma, uyuyakalma durumu) motor otomatik olarak durur, sesli ve görsel alarm devreye girer.</p>
+  </section>
+  
+  <!-- SYSTEM ARCHITECTURE -->
+  <section>
+    <h2>Sistem Mimarisi</h2>
+    
+    <div class="schema-container">
+      <svg width="100%" viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="ar1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </marker>
+        </defs>
+        
+        <text x="350" y="25" text-anchor="middle" font-family="Arial" font-size="14" font-weight="600" fill="#2c2c2a">Birinci Sistem: Yapay Zeka Kontrolü</text>
+        
+        <rect x="30" y="50" width="130" height="55" rx="6" fill="#f1efe8" stroke="#5f5e5a" stroke-width="1"/>
+        <text x="95" y="75" text-anchor="middle" font-family="Arial" font-size="13" font-weight="500" fill="#2c2c2a">Kamera</text>
+        <text x="95" y="92" text-anchor="middle" font-family="Arial" font-size="11" fill="#5f5e5a">Görüntü kaynağı</text>
+        
+        <rect x="200" y="50" width="130" height="55" rx="6" fill="#f1efe8" stroke="#5f5e5a" stroke-width="1"/>
+        <text x="265" y="75" text-anchor="middle" font-family="Arial" font-size="13" font-weight="500" fill="#2c2c2a">PC</text>
+        <text x="265" y="92" text-anchor="middle" font-family="Arial" font-size="11" fill="#5f5e5a">Gözlük tanıma</text>
+        
+        <rect x="370" y="50" width="130" height="55" rx="6" fill="#444441" stroke="#2c2c2a" stroke-width="1"/>
+        <text x="435" y="75" text-anchor="middle" font-family="Arial" font-size="13" font-weight="500" fill="#ffffff">Arduino Uno</text>
+        <text x="435" y="92" text-anchor="middle" font-family="Arial" font-size="11" fill="#d3d1c7">Karar verici</text>
+        
+        <rect x="540" y="50" width="130" height="55" rx="6" fill="#f1efe8" stroke="#5f5e5a" stroke-width="1"/>
+        <text x="605" y="75" text-anchor="middle" font-family="Arial" font-size="13" font-weight="500" fill="#2c2c2a">Röle + Fan</text>
+        <text x="605" y="92" text-anchor="middle" font-family="Arial" font-size="11" fill="#5f5e5a">Motor sürücü</text>
+        
+        <line x1="160" y1="78" x2="200" y2="78" stroke="#5f5e5a" stroke-width="1.5" marker-end="url(#ar1)"/>
+        <line x1="330" y1="78" x2="370" y2="78" stroke="#5f5e5a" stroke-width="1.5" marker-end="url(#ar1)"/>
+        <line x1="500" y1="78" x2="540" y2="78" stroke="#5f5e5a" stroke-width="1.5" marker-end="url(#ar1)"/>
+        
+        <text x="265" y="68" text-anchor="middle" font-family="Arial" font-size="9" fill="#888780">USB</text>
+        <text x="350" y="68" text-anchor="middle" font-family="Arial" font-size="9" fill="#888780">seri</text>
+        <text x="520" y="68" text-anchor="middle" font-family="Arial" font-size="9" fill="#888780">D7</text>
+        
+        <line x1="350" y1="130" x2="350" y2="180" stroke="#888780" stroke-width="1" stroke-dasharray="4 4"/>
+        
+        <text x="350" y="205" text-anchor="middle" font-family="Arial" font-size="14" font-weight="600" fill="#2c2c2a">İkinci Sistem: Donanımsal Güvenlik (Twin)</text>
+        
+        <rect x="30" y="230" width="130" height="55" rx="6" fill="#f1efe8" stroke="#5f5e5a" stroke-width="1"/>
+        <text x="95" y="255" text-anchor="middle" font-family="Arial" font-size="13" font-weight="500" fill="#2c2c2a">PIR Sensör</text>
+        <text x="95" y="272" text-anchor="middle" font-family="Arial" font-size="11" fill="#5f5e5a">Hareket algılayıcı</text>
+        
+        <rect x="200" y="230" width="130" height="55" rx="6" fill="#444441" stroke="#2c2c2a" stroke-width="1"/>
+        <text x="265" y="255" text-anchor="middle" font-family="Arial" font-size="13" font-weight="500" fill="#ffffff">Twin AIoT</text>
+        <text x="265" y="272" text-anchor="middle" font-family="Arial" font-size="11" fill="#d3d1c7">ESP32 modülü</text>
+        
+        <rect x="370" y="205" width="130" height="55" rx="6" fill="#f1efe8" stroke="#5f5e5a" stroke-width="1"/>
+        <text x="435" y="230" text-anchor="middle" font-family="Arial" font-size="13" font-weight="500" fill="#2c2c2a">Buzzer</text>
+        <text x="435" y="247" text-anchor="middle" font-family="Arial" font-size="11" fill="#5f5e5a">Sesli alarm</text>
+        
+        <rect x="370" y="275" width="130" height="55" rx="6" fill="#f1efe8" stroke="#5f5e5a" stroke-width="1"/>
+        <text x="435" y="300" text-anchor="middle" font-family="Arial" font-size="13" font-weight="500" fill="#2c2c2a">LED Bargraph</text>
+        <text x="435" y="317" text-anchor="middle" font-family="Arial" font-size="11" fill="#5f5e5a">Görsel alarm</text>
+        
+        <line x1="160" y1="258" x2="200" y2="258" stroke="#5f5e5a" stroke-width="1.5" marker-end="url(#ar1)"/>
+        <line x1="330" y1="248" x2="370" y2="232" stroke="#5f5e5a" stroke-width="1.5" marker-end="url(#ar1)"/>
+        <line x1="330" y1="268" x2="370" y2="302" stroke="#5f5e5a" stroke-width="1.5" marker-end="url(#ar1)"/>
+        
+        <path d="M 265 230 L 265 195 L 435 195 L 435 130" stroke="#BA7517" stroke-width="2" fill="none" marker-end="url(#ar1)"/>
+        <rect x="295" y="180" width="140" height="22" rx="3" fill="#fefaf2" stroke="#BA7517" stroke-width="0.5"/>
+        <text x="365" y="195" text-anchor="middle" font-family="Arial" font-size="11" font-weight="500" fill="#633806">DUR sinyali (D8 → D2)</text>
+        
+        <text x="540" y="240" font-family="Arial" font-size="11" fill="#5f5e5a">Bağlantı:</text>
+        <text x="540" y="258" font-family="Arial" font-size="11" fill="#5f5e5a">• 2 kablo</text>
+        <text x="540" y="274" font-family="Arial" font-size="11" fill="#5f5e5a">• Sinyal + GND</text>
+        <text x="540" y="290" font-family="Arial" font-size="11" fill="#5f5e5a">• Ayrı güç kaynağı</text>
+        
+        <rect x="30" y="350" width="640" height="25" rx="3" fill="#f1efe8" stroke="#d3d1c7" stroke-width="0.5"/>
+        <text x="350" y="367" text-anchor="middle" font-family="Arial" font-size="11" fill="#5f5e5a">Motor şartı: Gözlük takılı VE son 5 saniye içinde hareket algılandı</text>
+      </svg>
+      <div class="caption">Şekil 1: Dijital Nöbetçi sistem mimarisi ve veri akışı</div>
+    </div>
+  </section>
+  
+  <!-- WORKING PRINCIPLE -->
+  <section>
+    <h2>Çalışma Prensibi</h2>
+    
+    <div class="desc-grid">
+      <div class="desc-card">
+        <h4><span class="num">1</span>Görüntü Analizi</h4>
+        <p>PC'ye bağlı kamera işçinin yüzünü sürekli izler. Yapay zeka modeli koruyucu gözlüğün takılı olup olmadığını gerçek zamanlı tespit eder.</p>
+      </div>
+      <div class="desc-card">
+        <h4><span class="num">2</span>Karar Mekanizması</h4>
+        <p>PC, gözlük durumunu seri haberleşme ile Arduino'ya iletir. Arduino motoru çalıştırma kararı verir.</p>
+      </div>
+      <div class="desc-card">
+        <h4><span class="num">3</span>Hareket Takibi</h4>
+        <p>Twin AIoT modülü üzerindeki PIR sensör işçinin hareketlerini izler. 5 saniye hareketsizlik kritik eşik olarak belirlenir.</p>
+      </div>
+      <div class="desc-card">
+        <h4><span class="num">4</span>Alarm ve Durdurma</h4>
+        <p>Hareketsizlik tespit edilirse Twin Arduino'ya durdurma sinyali gönderir, buzzer ve LED bargraph alarm verir.</p>
+      </div>
+    </div>
+    
+    <div class="warning">
+      <strong>İki katmanlı güvenlik mantığı</strong>
+      Motorun çalışması için her iki şartın da sağlanması gerekir: koruyucu gözlüğün takılı olması ve son 5 saniye içinde hareket algılanmış olması. Bu sayede bilinç kaybı durumu da güvence altına alınmış olur.
+    </div>
+  </section>
+  
+  <!-- MATERIALS -->
+  <section>
+    <h2>Malzeme Listesi</h2>
+    
+    <h3>Elektronik Bileşenler</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Bileşen</th>
+          <th>Açıklama</th>
+          <th>Kategori</th>
+          <th class="qty">Adet</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Arduino Uno</td>
+          <td>Ana mikrodenetleyici kartı</td>
+          <td><span class="category-tag">Kontrol</span></td>
+          <td class="qty">1</td>
+        </tr>
+        <tr>
+          <td>Twin AIoT Modülü</td>
+          <td>ESP32 tabanlı, 8x8 LED matrix ve RGB LED içerir</td>
+          <td><span class="category-tag">Kontrol</span></td>
+          <td class="qty">1</td>
+        </tr>
+        <tr>
+          <td>USB Web Kamera</td>
+          <td>Görüntü kaynağı, en az 720p</td>
+          <td><span class="category-tag">Giriş</span></td>
+          <td class="qty">1</td>
+        </tr>
+        <tr>
+          <td>Twin PIR Hareket Sensörü</td>
+          <td>MG15 - mode b konumunda kullanılır</td>
+          <td><span class="category-tag">Giriş</span></td>
+          <td class="qty">1</td>
+        </tr>
+        <tr>
+          <td>Twin Buzzer Modülü</td>
+          <td>MC17 - sesli alarm çıkışı</td>
+          <td><span class="category-tag">Çıkış</span></td>
+          <td class="qty">1</td>
+        </tr>
+        <tr>
+          <td>Twin LED Bargraph</td>
+          <td>MC15 - 5 LED görsel alarm</td>
+          <td><span class="category-tag">Çıkış</span></td>
+          <td class="qty">1</td>
+        </tr>
+        <tr>
+          <td>Twin USB Güç Modülü</td>
+          <td>Twin sistemini besler</td>
+          <td><span class="category-tag">Güç</span></td>
+          <td class="qty">1</td>
+        </tr>
+        <tr>
+          <td>Twin Wire Modülü</td>
+          <td>D8 pininden Arduino'ya sinyal taşır</td>
+          <td><span class="category-tag">Bağlantı</span></td>
+          <td class="qty">1</td>
+        </tr>
+        <tr>
+          <td>Röle Modülü</td>
+          <td>5V tek kanal, motor anahtarlama</td>
+          <td><span class="category-tag">Çıkış</span></td>
+          <td class="qty">1</td>
+        </tr>
+        <tr>
+          <td>Masaüstü Fan</td>
+          <td>DC motorlu, ayrı güç kaynağı ile çalışır</td>
+          <td><span class="category-tag">Yük</span></td>
+          <td class="qty">1</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <h3>Yardımcı Malzemeler</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Malzeme</th>
+          <th>Açıklama</th>
+          <th class="qty">Adet</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Jumper kablo (dişi-dişi)</td>
+          <td>Twin Wire ile Arduino arası bağlantı</td>
+          <td class="qty">2</td>
+        </tr>
+        <tr>
+          <td>USB kabloları</td>
+          <td>Arduino ve Twin için ayrı besleme</td>
+          <td class="qty">2</td>
+        </tr>
+        <tr>
+          <td>Elektrik bandı veya makaron</td>
+          <td>Kullanılmayan VCC kablosu izolasyonu</td>
+          <td class="qty">1</td>
+        </tr>
+        <tr>
+          <td>PC / Dizüstü bilgisayar</td>
+          <td>Görüntü işleme yazılımı için</td>
+          <td class="qty">1</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  
+  <!-- FOOTER -->
+  <footer>
+    Dijital Nöbetçi · İşçi Sağlığı ve Güvenliği Projesi · [Okul Adı] · 2026
+  </footer>
+
+</div>
+
+</body>
+</html>
