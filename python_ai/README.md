@@ -26,7 +26,7 @@ Türkçe karakter (ş, ç, ğ, ü, ö, ı) Python'da sorun çıkarabilir.
 
 ## Eğitim İçin İpuçları
 
-- Her sınıf için **en az 50-100 fotoğraf**
+- Her sınıf için **en az 150-200 fotoğraf**
 - Farklı **ışık koşulları**
 - Farklı **açılar** (sol, sağ, yukarı, aşağı)
 - Farklı **arka planlar**
