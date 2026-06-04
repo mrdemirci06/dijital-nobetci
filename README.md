@@ -1,6 +1,8 @@
 # Dijital Nöbetçi 🛡️
 
 > İşçi Sağlığı ve Güvenliği için Yapay Zeka Destekli Çift Katmanlı İzleme Sistemi
+> Karabük Atatürk Ortaokulu
+> Proje Danışmanı: Emre Demirci, Takım Kaptanı: Abdullah Mert Durmaz, Araştırmacı: Ömer Faruk Oral
 
 [![Status](https://img.shields.io/badge/Status-Yar%C4%B1%20Final-success)]()
 [![License](https://img.shields.io/badge/License-MIT-blue)]()
