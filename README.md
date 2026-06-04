@@ -1,7 +1,17 @@
 # Dijital Nöbetçi 🛡️
 
 > İşçi Sağlığı ve Güvenliği için Yapay Zeka Destekli Çift Katmanlı İzleme Sistemi
-> Karabük Atatürk Ortaokulu - Danışman : Emre Demirci,Takım Kaptanı : Abdullah Mert Durmaz, Araştırmacı : Abdullah Mert Durmaz
+
+[![Status](https://img.shields.io/badge/Status-Yar%C4%B1%20Final-success)]()
+[![License](https://img.shields.io/badge/License-MIT-blue)]()
+[![Platform](https://img.shields.io/badge/Platform-ESP32--S3%20%2B%20Arduino-orange)]()
+
+## 🏆 Proje Başarıları
+
+Bu proje **yarı finale yükselmiştir**. Jüri değerlendirmesinde özellikle:
+- ✅ Güvenlik ve kişisel gizlilik testleri başarılı
+- ✅ Birden fazla kontrol noktasına sahip sistem
+- ✅ Özgün fikir üzerine **iyi mühendislik tasarımı**
 
 ## Proje Hakkında
 
@@ -164,7 +174,9 @@ dijital_nobetci/
 │   ├── KURULUM.md                 # Detaylı kurulum
 │   ├── BAGLANTI_SEMASI.md         # Bağlantı detayları
 │   ├── SORUN_GIDERME.md           # Karşılaşılan sorunlar
-│   └── dijital_nobetci.html       # Proje sunum sayfası
+│   ├── YAPAY_ZEKA_MODELI.md       # Model algoritması ve eğitim detayları
+│   ├── MALIYET_ANALIZI.md         # Detaylı maliyet hesabı (Mayıs 2026)
+│   └── proje_sunum.html           # Proje sunum sayfası
 └── images/                        # Proje fotoğrafları
 ```
 
